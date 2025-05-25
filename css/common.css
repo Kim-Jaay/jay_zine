@@ -67,3 +67,12 @@ div{word-break: keep-all;}
 .sec_tit2{font-size: 36px;}
 .sec_tit3{font-size: 40px;}
 .sec_tit4{font-size: 48px;}
+
+b{font-weight: 800;}
+.b300{font-weight: 300;}
+.b400{font-weight: 400;}
+.b500{font-weight: 500;}
+.b600{font-weight: 600;}
+.b700{font-weight: 700;}
+.b800{font-weight: 800;}
+.b900{font-weight: 900;}
