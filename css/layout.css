@@ -1,1 +1,4 @@
 .zine_all_wrap {width: 100%; margin: 0 auto ; padding: 0 20px;}
+.zine_con_wrap {display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;} 
+.zine_con_all_wrap{ padding: 40px 0;}
+.zine_con{background: #eee; height: 300px;}
