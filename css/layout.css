@@ -1,6 +1,6 @@
 body{background: #000;}
 * {color: #fff;}
-.all_wrap {max-width: 400px; margin: 0 auto ;}
+.all_wrap {max-width: 400px; width: 100%; margin: 0 auto ;}
 .header{padding: 20px 0;}
 .zine_all_wrap{padding: 40px 0;}
 .zine_con_wrap {display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;} 
