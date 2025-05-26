@@ -1,4 +1,9 @@
-.zine_all_wrap {padding:80px 16px; max-width: 400px; width: 100%; margin: 0 auto ; padding: 0 20px;}
+body{background: #000;}
+* {color: #fff;}
+.all_wrap {padding:16px; max-width: 400px; width: 100%; margin: 0 auto ;}
+.header{padding: 20px 0;}
+.zine_all_wrap{padding: 40px 0;}
 .zine_con_wrap {display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;} 
 .zine_con_all_wrap{ margin: 0 auto;}
-.zine_con{background: #eee; height: 100px;}
+.zine_con{background: #eee; height: 120px; overflow: hidden;}
+.zine_con img {height: 100%; object-fit: cover;}

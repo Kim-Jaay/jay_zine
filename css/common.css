@@ -51,22 +51,22 @@ div{word-break: keep-all;}
 .gap{height: 100px;}
 .sgap {height: 50px;}
 .ssgap{height: 20px;}
-
-
+.sssgap{height: 10px;}
 
 .txt_center{text-align: center; margin: 0 auto;}
 .txt_left{text-align: left;}
 .txt_right{text-align: right;}
 
-.sec_txt{font-size: 18px; line-height: 1.45;}
-.sec_txt2{font-size: 20px; line-height: 1.45;}
-.sec_txt3{font-size: 24px; line-height: 1.45;}
-.sec_txt4{font-size: 28px; line-height: 1.45;}
+.sec_txt{font-size: 15px; line-height: 1.45;}
+.sec_txt2{font-size: 18px; line-height: 1.45;}
+.sec_txt3{font-size: 20px; line-height: 1.45;}
+.sec_txt4{font-size: 24px; line-height: 1.45;}
 
 .sec_tit {font-size: 32px;}
 .sec_tit2{font-size: 36px;}
 .sec_tit3{font-size: 40px;}
 .sec_tit4{font-size: 48px;}
+.sec_tit5{font-size: 60px;}
 
 b{font-weight: 800;}
 .b300{font-weight: 300;}
