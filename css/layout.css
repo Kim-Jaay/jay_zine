@@ -6,4 +6,4 @@ body{background: #000;}
 .zine_con_wrap {display: grid; grid-template-columns: repeat(3,1fr); gap: 8px;} 
 .zine_con_all_wrap{ margin: 0 auto;}
 .zine_con{background: #eee; height: 120px; overflow: hidden;}
-.zine_con img {height: 100%; object-fit: cover;}
+.zine_con img {height: 101%; object-fit: cover;}
