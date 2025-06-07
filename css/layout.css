@@ -27,6 +27,6 @@ body::-webkit-scrollbar { display: none; }
 }
 /* 서브페이지 */
 .sub_all_wrap{padding: 50px 16px; }
-.sub_banner { height: calc(100vh - 66px); width: 100%; max-width: 400px; margin: 0 auto;}
+.sub_banner { height: 80vh; width: 100%; max-width: 400px; margin: 0 auto;}
 .sub_banner_01{background: url(/jay_zine/img/burn_thumb_01.jpg)no-repeat center center/cover;}
 .con_all_wrap {width: 100%; max-width: 400px; margin: 0 auto;}
