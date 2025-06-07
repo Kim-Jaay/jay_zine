@@ -1,6 +1,7 @@
 
 
-.main_all_wrap { scroll-behavior: smooth; margin: 0; padding: 0; height: 100%; background: #ffefec; overflow: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.main_all_wrap { scroll-behavior: smooth; margin: 0; padding: 0; height: 100%; overflow: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+body{background: #ffefec; }
 body::-webkit-scrollbar { display: none; }
 .header { position: relative; height: 0; }
 .header a { height: 50px; line-height: 50px; width: 100%; text-align: center; position: fixed; top: 0; left: 50%; transform: translate(-50%, 0); z-index: 999; }
@@ -25,6 +26,7 @@ body::-webkit-scrollbar { display: none; }
     100% { transform: translateX(-50%); }
 }
 /* 서브페이지 */
-.sub_banner { height: 80vh; }
-.sub_banner img{object-fit: cover; height: 100%;}
-.con_all_wrap { padding: 80px 16px; max-width: 400px; }
+.sub_all_wrap{padding: 50px 16px; }
+.sub_banner { height: calc(100vh - 66px); width: 100%; max-width: 400px; margin: 0 auto;}
+.sub_banner_01{background: url(/img/burn_thumb_01.jpg)no-repeat center center/cover;}
+.con_all_wrap {width: 100%; max-width: 400px; margin: 0 auto;}
