@@ -32,4 +32,5 @@ body::-webkit-scrollbar { display: none; }
 .sub_banner { height: 80vh; width: 100%; max-width: 400px; margin: 0 auto;}
 .sub_banner_01{background: url(/jay_zine/img/burn_thumb_01.jpg)no-repeat center center/cover;}
 .sub_banner_02{background: url(/jay_zine/img/burn_thumb_02.jpg)no-repeat center center/cover;}
+.sub_banner_03{background: url(/jay_zine/img/burn_thumb_03.jpg)no-repeat center center/cover;}
 .con_all_wrap {width: 100%; max-width: 400px; margin: 0 auto;}
