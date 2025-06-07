@@ -8,10 +8,40 @@
     .split.top { top: 0; }
     .split.bottom { bottom: 0; }
     .center-content { width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; font-size: 6rem; pointer-events: none; transition: color 0.6s ease; color: #ff2725 !important; font-family: 'Poppins','pretendard' sans-serif; }
-
     * { color: #ff2725; font-family: 'Poppins','pretendard' }
     .zine_all_wrap { background: #ffefec; max-width: 400px; width: 100%; margin: 0 auto ; padding: 80px 16px; }
     .zine_con_wrap { display: grid; grid-template-columns: repeat(1,1fr); gap: 8px; }
     .zine_con_all_wrap { margin: 0 auto; }
     .zine_con { background: #ffefec; overflow: hidden; }
     .zine_con img { object-fit: cover; }
+
+    
+     .marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .marquee-track {
+    display: flex;
+    animation: scrollLeft 20s linear infinite;
+  }
+
+  .marquee-track span {
+    white-space: nowrap;
+    color: #ff2725;
+    padding-right: 3rem;
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
