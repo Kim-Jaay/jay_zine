@@ -76,6 +76,7 @@
             document.querySelector('.split.bottom').style.transform = 'translateY(100%)';
             document.querySelector('.main-video').style.opacity = '1';
             document.querySelector('.center-content').style.color = '#ff2725';
+            document.querySelector('.marquee-track').classList.add('white'); // 
             enableScroll();
             isOpened = true;
         }
@@ -85,9 +86,11 @@
             document.querySelector('.split.bottom').style.transform = 'translateY(0)';
             document.querySelector('.main-video').style.opacity = '0';
             document.querySelector('.center-content').style.color = '#ff2725';
+            document.querySelector('.marquee-track').classList.remove('white'); // 
             disableScroll();
             isOpened = false;
         }
+
 
         window.addEventListener('wheel', (e) => {
             if (e.deltaY > 0 && !isOpened) {
