@@ -15,7 +15,7 @@ body::-webkit-scrollbar { display: none; }
 * { color: #ff2725; font-family: 'Poppins','pretendard' }
 .center-content { width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999; font-size: 6rem; pointer-events: none; transition: color 0.6s ease; color: #ff2725 !important; font-family: 'Poppins','pretendard' sans-serif; }
 .zine_all_wrap { background: #ffefec; max-width: 400px; width: 100%; margin: 0 auto ; padding: 80px 16px; }
-.zine_con_wrap { display: grid; grid-template-columns: repeat(1,1fr); gap: 8px; }
+.zine_con_wrap { display: grid; grid-template-columns: repeat(1,1fr); gap: 24px; }
 .zine_con_all_wrap { margin: 0 auto; }
 .zine_con { background: #ffefec; overflow: hidden; }
 .zine_con img { width: 100%; object-fit: cover; }
@@ -31,4 +31,5 @@ body::-webkit-scrollbar { display: none; }
 .sub_all_wrap{padding: 50px 16px; }
 .sub_banner { height: 80vh; width: 100%; max-width: 400px; margin: 0 auto;}
 .sub_banner_01{background: url(/jay_zine/img/burn_thumb_01.jpg)no-repeat center center/cover;}
+.sub_banner_02{background: url(/jay_zine/img/burn_thumb_02.jpg)no-repeat center center/cover;}
 .con_all_wrap {width: 100%; max-width: 400px; margin: 0 auto;}
