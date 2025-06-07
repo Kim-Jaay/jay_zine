@@ -2,124 +2,137 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <title>나를 태우는 것</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <style>
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background: #111;
-            font-family: sans-serif;
-            overflow: hidden;
-            scrollbar-width: none;
-        }
+  <meta charset="UTF-8">
+  <title>나를 태우는 것</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #111;
+      font-family: sans-serif;
+      overflow: hidden;
+      scrollbar-width: none;
+    }
 
-        body::-webkit-scrollbar {
-            display: none;
-        }
+    body::-webkit-scrollbar {
+      display: none;
+    }
 
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-        .main-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease;
-            z-index: 2;
-        }
+    .main-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease;
+      z-index: 2;
+    }
 
-        .split {
-            position: absolute;
-            width: 100%;
-            height: 50%;
-            background: #111;
-            z-index: 3;
-            transition: transform 1s ease;
-        }
+    .split {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      background: #111;
+      z-index: 3;
+      transition: transform 1s ease;
+    }
 
-        .split.top {
-            top: 0;
-        }
+    .split.top {
+      top: 0;
+    }
 
-        .split.bottom {
-            bottom: 0;
-        }
+    .split.bottom {
+      bottom: 0;
+    }
 
-        .center-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 4;
-            color: #fff;
-            font-size: 2.5rem;
-            pointer-events: none;
-        }
+    .center-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+      color: #fff;
+      font-size: 2.5rem;
+      pointer-events: none;
+    }
 
-        .spacer {
-            height: 200vh;
-            background: #111;
-        }
-    </style>
+    .spacer {
+      height: 200vh;
+      background: #111;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="hero-section">
-        <video class="main-video" autoplay muted loop playsinline>
-            <source src="./img/main_bg.mp4" type="video/mp4">
-        </video>
-        <div class="split top"></div>
-        <div class="split bottom"></div>
-        <div class="center-content sec_tit5 b800">Burning;</div>
-    </div>
-    <div class="spacer"></div>
-    <script>
-        let isOpened = false;
+  <div class="hero-section">
+    <video class="main-video" autoplay muted loop playsinline preload="auto">
+      <source src="./img/main_bg.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="split top"></div>
+    <div class="split bottom"></div>
+    <div class="center-content sec_tit5 b800">Burning;</div>
+  </div>
+  <div class="spacer"></div>
 
-        function openScene() {
-            document.querySelector('.split.top').style.transform = 'translateY(-100%)';
-            document.querySelector('.split.bottom').style.transform = 'translateY(100%)';
-            document.querySelector('.main-video').style.opacity = '1';
+  <script>
+    let isOpened = false;
 
-            document.documentElement.style.overflow = 'auto';
-            document.body.style.overflow = 'auto';
-            isOpened = true;
+    function openScene() {
+      document.querySelector('.split.top').style.transform = 'translateY(-100%)';
+      document.querySelector('.split.bottom').style.transform = 'translateY(100%)';
+      document.querySelector('.main-video').style.opacity = '1';
+
+      document.documentElement.style.overflow = 'auto';
+      document.body.style.overflow = 'auto';
+      isOpened = true;
+    }
+
+    function closeScene() {
+      document.querySelector('.split.top').style.transform = 'translateY(0)';
+      document.querySelector('.split.bottom').style.transform = 'translateY(0)';
+      document.querySelector('.main-video').style.opacity = '0';
+
+      isOpened = false;
+    }
+
+    // 스크롤 방향 감지
+    window.addEventListener('wheel', (e) => {
+      if (e.deltaY > 0 && !isOpened) {
+        openScene();
+      } else if (e.deltaY < 0 && isOpened && window.scrollY <= 10) {
+        closeScene();
+      }
+    });
+
+    // iOS autoplay 보완 처리
+    window.addEventListener('load', () => {
+      window.scrollTo(0, 0);
+      closeScene();
+
+      const video = document.querySelector('.main-video');
+      if (video) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // 사용자 인터랙션 필요 시 터치로 play
+            window.addEventListener('touchstart', () => video.play(), { once: true });
+          });
         }
-
-        function closeScene() {
-            document.querySelector('.split.top').style.transform = 'translateY(0)';
-            document.querySelector('.split.bottom').style.transform = 'translateY(0)';
-            document.querySelector('.main-video').style.opacity = '0';
-
-            isOpened = false;
-        }
-
-        window.addEventListener('wheel', (e) => {
-            if (e.deltaY > 0 && !isOpened) {
-                openScene();
-            } else if (e.deltaY < 0 && isOpened && window.scrollY <= 10) {
-                closeScene();
-            }
-        });
-
-        window.addEventListener('load', () => {
-            window.scrollTo(0, 0);
-            closeScene();
-        });
-    </script>
+      }
+    });
+  </script>
 </body>
-
 </html>
